@@ -21,9 +21,9 @@ beautiful.titlebar_fg_normal = "#707880"
 beautiful.titlebar_fg_focus  = "#e5e7eb"
 beautiful.titlebar_font      = "JetBrainsMono Nerd Font Bold 10"
 
-beautiful.border_normal = "#f5e0dc"
-beautiful.border_focus  = "#b4befe"
-beautiful.border_width  = 5
+beautiful.border_normal = "#1e1e2e"
+beautiful.border_focus  = "#fab387"
+beautiful.border_width  = 2
 
 
 -------------------------------------------------
@@ -151,7 +151,7 @@ awful.rules.rules = {
         rule = { }, 
         properties = { 
             border_width = 2, 
-            border_color = "#1e293b", 
+            border_color = "#1e1e2e", 
             focus = awful.client.focus.filter, 
             raise = true, 
             screen = awful.screen.preferred, 
@@ -274,8 +274,8 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
-client.connect_signal("focus", function(c) c.border_color = "#8b5cf6" end)
-client.connect_signal("unfocus", function(c) c.border_color = "#1e293b" end)
+client.connect_signal("focus", function(c) c.border_color = "#fab387" end)
+client.connect_signal("unfocus", function(c) c.border_color = "#1e1e2e" end)
 
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", { raise = false })

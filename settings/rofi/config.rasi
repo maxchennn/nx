@@ -7,28 +7,29 @@ configuration {
 * {
     red:                     #DF5B61;
     darkred:                 #f16269;
-    green  :                 #78B892;
+    green:                   #78B892;
     darkgreen:               #8cd7aa;
-    yellow:                  #DE8F78;
-    darkyellow:              #e9967e;
+    yellow:                  #fab387;
+    darkyellow:              #f99c5c;
     blue:                    #6791C9;
     darkblue:                #79aaeb;
-    purple:                  #BC83E3;
-    darkpurple:              #c488ec;
+    purple:                  #fab387;
+    darkpurple:              #f99c5c;
     cyan:                    #67AFC1;
     darkcyan:                #7acfe4;
     foreground:              #D9D7D6;
-    background:              #071317;
-    border:                  #434C5E;
+    background:              #1e1e2e;
+    border:                  #fab387;
 }
 
 window {
-    border:                  0px;
+    border:                  2px;
     border-radius:           0px;
     padding:                 30;
     width:                   40%;
     height:                  43%;
     border-color:            @border;
+    background-color:        @background;
 }
 
 mainbox {
@@ -49,13 +50,13 @@ textbox {
 listview {
     lines:         15;
     columns:       1;
-    fixed-height: 0;
+    fixed-height:  0;
     border:        0px 0px 0px ;
-    border-color: @separatorcolor;
+    border-color:  @separatorcolor;
     spacing:       0px;
     scrollbar:     false;
     padding:       2px 0px 0px ;
-    background:    @background;
+    background-color: @background;
 }
 
 element {
@@ -79,7 +80,7 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: @purple;
+    background-color: @yellow;
     border-radius:    10px;
     text-color:       @background;
 }
@@ -164,7 +165,7 @@ textbox-prompt-colon {
     enabled: true;
     str: " 󱄅 ";
     background-color: @background;
-    text-color: @purple; 
+    text-color: @yellow; 
     padding: 10px 0px 10px 10px;
     expand: false;
 }

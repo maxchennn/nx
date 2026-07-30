@@ -1,0 +1,103 @@
+
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+    modi:                       "drun,run";
+    font:                       "Iosevka 14";
+    show-icons:                 false;
+    icon-theme:                 "kora";
+    display-drun:               "临";
+    display-run:                "临";
+    drun-display-format:        "{name}";
+    hover-select:               false;
+    scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+}
+
+window {
+    width:                        350px;
+    x-offset:                     0px;
+    y-offset:                     0px;
+    spacing:                      0px;
+    padding:                      10px;
+    margin:                       0px; 
+    border:                       2px solid;
+    border-color:                 @outline-variant;
+    background-color:             @surface;
+    cursor:                       "default";
+    transparency:                 "real";
+    location:                     center;
+    anchor:                       center;
+    fullscreen:                   false;
+    enabled:                      true;
+    border-radius:                12px;
+}
+
+mainbox {
+    spacing:                      4px;
+    margin:                       0px;
+    padding:                      0px;
+    background-color:             transparent;
+    children:                     ["inputbar", "listview", "message"];
+}
+
+listview {
+    columns:                      1;
+    lines:                        8;
+    fixed-height:                 true;
+    fixed-columns:                true;
+    cycle:                        false;
+    scrollbar:                    false;
+    border:                       0px solid;
+    border-radius:                8px;
+    background-color:             transparent;
+}
+
+prompt {
+    padding:                      0 5px 0 5px;
+    background-color:             transparent;
+    text-color:                   @primary;
+}
+
+inputbar {
+    children:                     ["prompt", "entry"];
+    spacing:                      2px;
+    border-radius:                8px;
+    padding:                      6px;
+    background-color:             @surface-container-high;
+}
+
+entry {
+    placeholder:                  "Search the Trizen";
+    placeholder-color:            @on-surface-variant;
+    padding:                      2px;
+    background-color:             transparent;
+    text-color:                   @on-surface;
+}
+
+element {
+    spacing:                      0px;
+    margin:                       0px;
+    padding:                      8px;
+    border:                       0px solid;
+    border-radius:                6px;
+    background-color:             transparent;
+    text-color:                   @on-surface;
+}
+
+element normal.normal {
+    background-color:             transparent;
+    text-color:                   @on-surface;
+}
+
+element selected.normal {
+    background-color:             @primary-container;
+    text-color:                   @on-primary-container;
+}
+
+element alternate.normal {
+    background-color:             transparent;
+    text-color:                   @on-surface;
+}

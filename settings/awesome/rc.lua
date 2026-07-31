@@ -80,7 +80,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey,          }, "l",     function () awful.spawn("bash ~/.config/awesome/lock.sh") end),
     awful.key({ modkey, "Shift"  }, "r",     function () awesome.restart() end),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn("dolphin") end),
-    awful.key({ modkey,           }, "f",      function () if client.focus then client.focus.floating = not client.focus.floating end end),
+    awful.key({ modkey,           }, "f",      function () if client.focus then awful.client.floating.toggle(client.focus)
+        client.focus:raise() end end),
     awful.key({ modkey,           }, "d",      function () awful.spawn("rofi -show drun") end),
     awful.key({ modkey,           }, "Tab",    function () awful.client.focus.history.previous() end),
     awful.key({ modkey, "Shift"   }, "a",      function () awful.spawn("code") end),
@@ -159,6 +160,17 @@ awful.rules.rules = {
             titlebars_enabled = true,
             buttons = clientbuttons
         } 
+    },
+    {
+        rule_any = { class = { "Spotify", "spotify" } },
+        properties = {
+            floating = true,
+            titlebars_enabled = true,
+            maximized = false,
+            fullscreen = false,
+            ontop = false,
+            placement = awful.placement.centered
+        }
     },
     {
         rule = { floating = true },
@@ -306,3 +318,4 @@ awful.spawn.with_shell("mako &")
 awful.spawn.with_shell("picom &")
 awful.spawn.with_shell("blueman-applet &")
 awful.spawn.once("polybar -c ~/.config/polybar/config.ini main")
+
